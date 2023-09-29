@@ -3,33 +3,38 @@ import img from "../Components/img";
 import { useAuth } from "../Context/authContext";
 import { useNavigate } from "react-router-dom";
 
-
 export const Registro = () => {
-
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
-  const { signup } = useAuth();
+  const { signup, loginWhithGoogle } = useAuth();
 
   const navigate = useNavigate();
 
-  const [error, setError] = useState();  
+  const [error, setError] = useState();
 
   //Se acutualiza el objeto
   const handleChange = ({ target: { name, value } }) =>
     setUser({ ...user, [name]: value });
 
+  //Registrando a un Usuario por correo y contraseña
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("")
+    setError("");
     try {
       await signup(user.email, user.password);
       navigate("/chat");
     } catch (error) {
-      setError(error.message)
+      setError(error.message);
     }
+  };
+
+  //Autentificando con Google
+  const handleLoginGoogle = async () => {
+    await loginWhithGoogle();
+    navigate("/chat");
   };
 
   return (
@@ -48,24 +53,21 @@ export const Registro = () => {
           className="max-w-[400px] w-full mx-auto bg-slate-950 p-10 px-8 rounded-lg"
         >
           <div className="mb-4 flex flex-col">
-          <input
+            <input
               type="text"
               name="nombre"
-              required
               placeholder="Nombre"
               className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             />
             <input
               type="text"
               name="apellido"
-              required
               placeholder="Apellido"
               className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             />
-          <input
+            <input
               type="email"
               name="email"
-              required
               placeholder="zyxbot@gmail.com"
               className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
               onChange={handleChange}
@@ -73,7 +75,6 @@ export const Registro = () => {
             <input
               type="password"
               name="password"
-              required
               placeholder="Contraseña"
               className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
               onChange={handleChange}
@@ -100,7 +101,10 @@ export const Registro = () => {
 
             {/* Botón 3 */}
             <div className="mb-4">
-              <button className="text-white px-8 py-2 rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 hover:bg-red-500 transition duration-300 ease-in-out">
+              <button
+                onClick={handleLoginGoogle}
+                className="text-white px-8 py-2 rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 hover:bg-red-500 transition duration-300 ease-in-out"
+              >
                 <img src={img.google} alt="" className="w-8 h-8 " />
               </button>
             </div>

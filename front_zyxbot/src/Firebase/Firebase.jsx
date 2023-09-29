@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import {  getAuth } from "firebase/auth";
 
 // Tu configuración de Firebase
 const firebaseConfig = {
@@ -14,3 +14,4 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+// const provider = new FacebookAuthProvider();
