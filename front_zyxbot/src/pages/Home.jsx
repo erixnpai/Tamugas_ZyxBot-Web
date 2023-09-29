@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from "react";
-import logo from "../img/Logo.webp";
-import img_1 from "../img/1.webp";
-import img_2 from "../img/2.webp";
-import img_3 from "../img/3.webp";
-import img_4 from "../img/4.webp";
-import registro_log from "../img/Registrate.webp";
-import facebook from "../img/facebook.webp";
-import instagram from "../img/instagram.webp";
-import twitter from "../img/twitter.webp";
-import tiktok from "../img/tiktok.webp";
-import whatsapp from "../img/whatsapp.webp";
-import yotube from "../img/yotube.webp";
-
-import Ana_ft from "../img/Anaft.webp";
-import Carlos_ft from "../img/Carlosft.webp";
-import Luis_ft from "../img/Luisft.webp";
-import Juan_ft from "../img/Juanft.webp";
-import User_ft from "../img/user.webp";
-import google from '../img/google.webp'
+import img from "../Components/img";
+import  {ConsultasHome} from '../Components/ConsultasHome'
+import { RegistroHome } from "../Components/RegistroHome";
 
 export const Home= () => {
 
@@ -53,7 +37,7 @@ export const Home= () => {
             <ul className="text-white text-xl font-poppins font-bold flex space-x-8 items-center">
               <li className="relative flex items-center">
                 <a href="/" id="#inicio" className="flex items-center">
-                  <img src={logo} alt="Logo ZyxBot" className="w-52 h-auto" />
+                  <img src={img.logo} alt="Logo ZyxBot" className="w-52 h-auto" />
                 </a>
               </li>
               <li className="relative flex items-center justify-center">
@@ -124,7 +108,7 @@ export const Home= () => {
           </div>
           <div className="w-1/2">
             <img
-              src={img_1}
+              src={img.img_1}
               alt="Imagen de ejemplo"
               className="w-full h-auto"
             />
@@ -138,7 +122,7 @@ export const Home= () => {
           <div className="w-9/12">
             <div className="relative">
               <img
-                src={img_2}
+                src={img.img_2}
                 alt="ZyxBot en movil y ordenador"
                 className="w-full h-auto"
               />
@@ -192,7 +176,7 @@ export const Home= () => {
             </div>
             <div className="w-[400px]">
               <img
-                src={img_3}
+                src={img.img_3}
                 alt="zyxboy en dispositivos móviles"
                 className="w-full h-auto"
               />
@@ -505,69 +489,9 @@ export const Home= () => {
       </section>
 
       {/*Registro home */}
-      <section className="bg-gray-950 py-16">
-        <div className="text-center">
-          <h2 className="text-5xl text-white font-mont mb-4">
-            Regístrate para Empezar Tu Viaje Educativo
-          </h2>
-          <p className="text-white font-popp mb-4">
-            ¡Bienvenido a ZyxBot! Regístrate ahora para comenzar a explorar un
-            mundo de posibilidades educativas.
-          </p>
-        </div>
-        <div className="container mx-auto flex items-center justify-center">
-          <div className="w-1/2">
-            <img
-              src={registro_log}
-              alt="Imagen de ZyxBot registro"
-              className="w-full h-auto"
-            />
-          </div>
-          <form className="w-1/3 ml-8 flex flex-col items-center ">
-            <input
-              type="text"
-              placeholder="Nombre"
-              className="w-80 h-14 px-8 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            />
-            <input
-              type="text"
-              placeholder="Apellido"
-              className="w-80 h-14 px-8 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            />
-
-            <input
-              type="email"
-              placeholder="Correo electrónico"
-              className="w-80 h-14 px-8 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            />
-            <input
-              type="password"
-              placeholder="Confirmar Contraseña"
-              className="w-80 h-14 px-8 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            />
-
-            <button className="w-30 h-10 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg hover:bg-blue-200 transition duration-300 mb-4">
-              REGÍSTRARSE
-            </button>
-            <h3 className="text-center text-white font-popp mb-4 ">
-              ¿Ya tienes una Cuenta? Iniciemos sesión
-            </h3>
-
-            <div className="flex space-x-4">
-              <button className=" w-20 h-11 px-6 py-2  flex items-center rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 ">
-                <img
-                  src={facebook}
-                  alt="Icono de facebook"
-                  className="w-8 h-8"
-                />
-              </button>
-              <button className=" w-20 h-11 px-6 py-2  rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700">
-                <img src={google} alt="Icono de Google" className="w-8 h-8" />
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+     <section>
+       <RegistroHome/>
+     </section>
 
       {/*Seccion de testimonio*/}
       <section id="opiniones" className="bg-rose-100 py-16 ">
@@ -585,7 +509,7 @@ export const Home= () => {
             <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3">
               <div className="flex items-center">
                 <img
-                  src={Ana_ft}
+                  src={img.Ana_ft}
                   alt="Imagen de perfil de Ana"
                   className="rounded-full w-20 h-20"
                 />
@@ -609,7 +533,7 @@ export const Home= () => {
             <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3">
               <div className="flex items-center">
                 <img
-                  src={Carlos_ft}
+                  src={img.Carlos_ft}
                   alt="Imagen de perfil de Ana"
                   className="rounded-full w-20 h-20"
                 />
@@ -637,7 +561,7 @@ export const Home= () => {
             <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3">
               <div className="flex items-center">
                 <img
-                  src={Luis_ft}
+                  src={img.Luis_ft}
                   alt="Imagen de perfil de Ana"
                   className="rounded-full w-20 h-20"
                 />
@@ -661,7 +585,7 @@ export const Home= () => {
             <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3">
               <div className="flex items-center">
                 <img
-                  src={Juan_ft}
+                  src={img.Juan_ft}
                   alt="Imagen de perfil de Ana"
                   className="rounded-full w-20 h-20"
                 />
@@ -685,63 +609,9 @@ export const Home= () => {
       </section>
 
       {/* CONSULTAS Y COMENTARIOS */}
-      <section id="soporte" className="bg-gray-950 py-16">
-        <h2 className="text-5xl text-white text-center font-mont mb-10">
-          Envíanos tus consultas y comentarios
-        </h2>
-        <div className="flex">
-          <form className="w-1/3 ml-8 flex flex-col items-center">
-            <input
-              type="text"
-              placeholder="Nombres y Apellidos"
-              className="w-64 h-14 px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            />
-            <input
-              type="text"
-              placeholder="Teléfono"
-              className=" w-64 h-14 px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            />
-            <input
-              type="text"
-              placeholder="Correo electrónico"
-              className=" w-64 h-14 px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            />
-
-            <textarea
-              placeholder="Mensaje"
-              rows="4"
-              className="w-64  px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-            ></textarea>
-            <button className="w-30 h-10 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg hover:bg-blue-200 transition duration-300">
-              ENVIAR
-            </button>
-          </form>
-          <div className="w-2/3 flex flex-col items-center">
-            <img src={logo} alt="Logo de ZyxBot" className="image-style mb-8" />
-            <div className="flex space-x-4">
-              <img src={twitter} alt="Icono de Twitter" className="w-10 h-10" />
-              <img
-                src={instagram}
-                alt="Icono de instagram"
-                className="w-10 h-10"
-              />
-              <img
-                src={facebook}
-                alt="Icono de facebook"
-                className="w-10 h-10"
-              />
-              <img src={tiktok} alt="Icono de tiktok" className="w-10 h-10" />
-              <img
-                src={whatsapp}
-                alt="Icono de whatsapp"
-                className="w-10 h-10"
-              />
-              <img src={yotube} alt="Icono de yotube" className="w-10 h-10" />
-            </div>
-          </div>
-        </div>
+      <section>
+        <ConsultasHome/>
       </section>
-
       {/*NUESTRO EQUIPO DE DESARROLLO*/}
       <section className="bg-gradient-to-b from-slate-400 via-white to-white ">
         <div className="container mx-auto flex ml-12  ">
@@ -760,7 +630,7 @@ export const Home= () => {
             <div className="flex items-center space-x-4 mb-8">
               <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
                 <img
-                  src={User_ft}
+                  src={img.User_ft}
                   alt=""
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -777,7 +647,7 @@ export const Home= () => {
             <div className="flex items-center space-x-4 mb-8">
               <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
                 <img
-                  src={User_ft}
+                  src={img.User_ft}
                   alt=""
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -794,7 +664,7 @@ export const Home= () => {
             <div className="flex items-center space-x-4 mb-8">
               <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
                 <img
-                  src={User_ft}
+                  src={img.User_ft}
                   alt=""
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -811,7 +681,7 @@ export const Home= () => {
             <div className="flex items-center space-x-4 mb-8">
               <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
                 <img
-                  src={User_ft}
+                  src={img.User_ft}
                   alt=""
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -828,7 +698,7 @@ export const Home= () => {
             <div className="flex items-center space-x-4 mb-8">
               <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
                 <img
-                  src={User_ft}
+                  src={img.User_ft}
                   alt=""
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -843,7 +713,7 @@ export const Home= () => {
           </div>
           <div className="w-1/2 ">
             <img
-              src={img_4}
+              src={img.img_4}
               alt="Imagen de ejemplo"
               className="w-full h-auto"
             />
@@ -859,16 +729,16 @@ export const Home= () => {
             SÍGANOS EN LAS REDES SOCIALES
           </h2>
           <div className="flex space-x-4 mb-4">
-            <img src={twitter} alt="Icono de Twitter" className="w-10 h-10" />
+            <img src={img.twitter} alt="Icono de Twitter" className="w-10 h-10" />
             <img
-              src={instagram}
+              src={img.instagram}
               alt="Icono de instagram"
               className="w-10 h-10"
             />
-            <img src={facebook} alt="Icono de facebook" className="w-10 h-10" />
-            <img src={tiktok} alt="Icono de tiktok" className="w-10 h-10" />
-            <img src={whatsapp} alt="Icono de whatsapp" className="w-10 h-10" />
-            <img src={yotube} alt="Icono de yotube" className="w-10 h-10" />
+            <img src={img.facebook} alt="Icono de facebook" className="w-10 h-10" />
+            <img src={img.tiktok} alt="Icono de tiktok" className="w-10 h-10" />
+            <img src={img.whatsapp} alt="Icono de whatsapp" className="w-10 h-10" />
+            <img src={img.yotube} alt="Icono de yotube" className="w-10 h-10" />
           </div>
           <h2 className="text-3xl text-[#040C1C] font-mont mb-4">
             REGÍSTRESE EN ZYXBOT AHORA

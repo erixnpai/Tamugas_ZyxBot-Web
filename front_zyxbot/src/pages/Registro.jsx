@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import regisroCover from "../img/RegistroCover.webp";
-import facebook from "../img/facebook.webp";
-import google from "../img/google.webp";
+import img from "../Components/img";
 import { useAuth } from "../Context/authContext";
 import { useNavigate } from "react-router-dom";
 
@@ -38,7 +36,7 @@ export const Registro = () => {
     <div className="grid grid-cols-1 sm:grid-cols-3 h-screen w-full">
       <div className="sm:col-span-2 hidden sm:block">
         <img
-          src={regisroCover}
+          src={img.registroCover}
           alt="Aqui se muestra imagen del login"
           className="w-full h-full object-cover"
         />
@@ -96,14 +94,14 @@ export const Registro = () => {
             {/* Botón 2 */}
             <div className="mb-4">
               <button className="text-white px-8 py-2 rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 hover:bg-white transition duration-300 ease-in-out">
-                <img src={facebook} alt="" className="w-8 h-8" />
+                <img src={img.facebook} alt="" className="w-8 h-8" />
               </button>
             </div>
 
             {/* Botón 3 */}
             <div className="mb-4">
               <button className="text-white px-8 py-2 rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 hover:bg-red-500 transition duration-300 ease-in-out">
-                <img src={google} alt="" className="w-8 h-8 " />
+                <img src={img.google} alt="" className="w-8 h-8 " />
               </button>
             </div>
           </div>

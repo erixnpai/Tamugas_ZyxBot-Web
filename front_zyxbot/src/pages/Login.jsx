@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import loginCover from "../img/LoginCover.webp";
-import google from "../img/google.webp";
-import facebook from "../img/facebook.webp";
+import img from "../Components/img";
 import { useAuth } from "../Context/authContext";
 import { useNavigate } from "react-router-dom";
 
@@ -68,7 +66,7 @@ export const Login = () => {
           <div className="mb-4 flex justify-center items-center text-xl">
             <button className="w-60 h-12 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg flex items-center">
               <img
-                src={facebook}
+                src={img.facebook}
                 alt="Icono de Facebook"
                 className="w-8 h-8 mr-8"
               />
@@ -78,7 +76,7 @@ export const Login = () => {
           <div className="mb-4 flex justify-center items-center text-xl">
             <button className="w-60 h-12 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg flex items-center">
               <img
-                src={google}
+                src={img.google}
                 alt="Icono de Google"
                 className="w-8 h-8 mr-8"
               />
@@ -90,7 +88,7 @@ export const Login = () => {
 
       <div className="sm:col-span-2 hidden sm:block">
         <img
-          src={loginCover}
+          src={img.loginCover}
           alt="Aqui se muestra imagen del login"
           className="w-full h-full object-cover"
         />
