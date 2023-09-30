@@ -1,6 +1,6 @@
 import logo from "../img/Logo.webp";
 
-const Chat = () => {
+export const Chat = () => {
   return (
     <div className="flex h-screen bg-[#4D4D4D]">
       <aside className="w-1/5 bg-[#040C1C] py-6 flex flex-col justify-between">
@@ -50,5 +50,3 @@ const Chat = () => {
     </div>
   );
 };
-
-export default Chat;

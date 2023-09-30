@@ -20,7 +20,7 @@ import Juan_ft from "../img/Juanft.webp";
 import User_ft from "../img/user.webp";
 import google from '../img/google.webp'
 
-function Home() {
+export const Home= () => {
   const [mensaje, setMensaje] = useState("");
   const [respuesta, setRespuesta] = useState("");
 
@@ -929,5 +929,3 @@ function Home() {
     </>
   );
 }
-
-export default Home;

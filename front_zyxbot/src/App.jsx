@@ -1,30 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Route, Routes} from 'react-router-dom'
+import { AuthProvider } from './Context/authContext'
+import { Home } from './Components/Home'
+import { Login } from './Components/Login'
+import { Registro } from './Components/Registro'
+import { Chat } from './Components/Chat'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        
-        
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div className="px-6 pt-4 pb-2">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-          </div>
-      </div>
-
-
+    <AuthProvider>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={ <Login/> }/>
+        <Route path='/registro' element={ <Registro/> }/>
+        <Route path='/chat' element={ <Chat/> }/>
+      </Routes>
+    </AuthProvider>
     </>
   )
 }
