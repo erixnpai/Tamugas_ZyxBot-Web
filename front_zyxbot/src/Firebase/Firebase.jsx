@@ -3,13 +3,14 @@ import { getAuth } from "firebase/auth";
 
 // Tu configuración de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyArp3KRImp-OWSP_7QWw3VbS9Pt4HD5l1w",
-  authDomain: "db-zyxbot.firebaseapp.com",
-  projectId: "db-zyxbot",
-  storageBucket: "db-zyxbot.appspot.com",
-  messagingSenderId: "88740223225",
-  appId: "1:88740223225:web:bab209d2c154957a0f2a28"
+  apiKey: import.meta.env.VITE_REACT_APP_APIKEY,
+  authDomain: import.meta.env.VITE_REACT_APP_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_REACT_APP_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_REACT_APP_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_REACT_APP_APP_ID,
 };
+
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);

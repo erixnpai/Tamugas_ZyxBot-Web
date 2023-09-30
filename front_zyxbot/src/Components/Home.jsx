@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import logo from "../img/Logo.webp";
 import img_1 from "../img/1.webp";
@@ -21,31 +20,6 @@ import User_ft from "../img/user.webp";
 import google from '../img/google.webp'
 
 export const Home= () => {
-  const [mensaje, setMensaje] = useState("");
-  const [respuesta, setRespuesta] = useState("");
-
-  const handleMensajeChange = (event) => {
-    setMensaje(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    fetch("http://localhost:8000/api/mensaje", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ mensaje: mensaje }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setRespuesta(data.respuesta);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
 
   const [scrolling, setScrolling] = useState(false);
 
