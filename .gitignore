@@ -43,6 +43,7 @@ front_zyxbot/*.ntvs*
 front_zyxbot/*.njsproj
 front_zyxbot/*.sln
 front_zyxbot/*.sw?
+front_zyxbot/*.env
 
 
 vendor/
