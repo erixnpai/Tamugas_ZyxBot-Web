@@ -40,4 +40,4 @@ export default {
     Juan_ft,
     User_ft,
     google,
-  };
+  };  

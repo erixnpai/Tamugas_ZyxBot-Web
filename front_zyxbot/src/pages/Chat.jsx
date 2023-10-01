@@ -1,6 +1,14 @@
+import { useAuth } from "../Context/authContext";
 import logo from "../img/Logo.webp";
 
 export const Chat = () => {
+
+  const { user, logout} = useAuth();
+  
+  const handleLogout = async () => {
+    await logout();
+  };
+
   return (
     <div className="flex h-screen bg-[#4D4D4D]">
       <aside className="w-1/5 bg-[#040C1C] py-6 flex flex-col justify-between">
@@ -20,7 +28,7 @@ export const Chat = () => {
             <button className="border border-gray-800 hover:bg-gray-800 text-white font-bold w-60 h-12 rounded-lg shadow-lg mb-60">
               Nombre del chat
             </button>
-            <button className="bg-red-500 hover:bg-red-600 text-white font-bold w-40 h-10 rounded-lg shadow-lg ">
+            <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 text-white font-bold w-40 h-10 rounded-lg shadow-lg ">
               <a href="/">Cerrar sesión</a>
             </button>
           </div>

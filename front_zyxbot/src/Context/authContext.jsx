@@ -1,7 +1,11 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth, db } from "../Firebase/Firebase"; // Asegúrate de importar db desde firebaseConfig
 import { addDoc, collection } from "firebase/firestore";
@@ -16,26 +20,16 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  const signup = async (email, password) => {
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Puedes realizar otras acciones después de registrarte aquí si es necesario
-    } catch (error) {
-      console.error("Error al registrar:", error);
-      throw error; // Puedes manejar el error aquí o pasarlo a componentes superiores
-    }
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Autentificación con Google
+  const loginWhithGoogle = () => {
+    const googleProvider = new GoogleAuthProvider();
+    return signInWithPopup(auth, googleProvider);
   };
 
-  const login = async (email, password) => {
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Puedes realizar otras acciones después de iniciar sesión aquí si es necesario
-    } catch (error) {
-      console.error("Error al iniciar sesión:", error);
-      throw error; // Puedes manejar el error aquí o pasarlo a componentes superiores
-    }
-  };
-
+  // Guardar consultas en Firestore
   const saveQueriesFunctions = async (Consultas) => {
     const newDoc = {
       name: Consultas.name,
@@ -62,8 +56,38 @@ export function AuthProvider({ children }) {
     }
   };
 
+  // Registro de usuario
+  const signup = (email, password) =>
+    createUserWithEmailAndPassword(auth, email, password);
+
+  // Inicio de sesión
+  const login = (email, password) =>
+    signInWithEmailAndPassword(auth, email, password);
+
+  // Cierre de sesión
+  const logout = () => signOut(auth);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
-    <authContext.Provider value={{ signup, login, saveQueriesFunctions }}>
+    <authContext.Provider
+      value={{
+        signup,
+        login,
+        user,
+        loading,
+        logout,
+        loginWhithGoogle,
+        saveQueriesFunctions,
+      }}
+    >
       {children}
     </authContext.Provider>
   );
