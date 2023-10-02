@@ -23,10 +23,19 @@ export const ConsultasHome = () => {
     e.preventDefault();
     try {
       await saveQueriesFunctions(consultas);
+      console.log("Consultas antes de limpiar:", consultas); // Verifica los valores actuales
+      setConsultas({
+        name: "",
+        movil: "",
+        email: "",
+        sms: "",
+      });
+      console.log("Consultas después de limpiar:", consultas); // Verifica si se han limpiado
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   return (
     <section id="soporte" className="bg-gray-950 py-16">
@@ -43,9 +52,10 @@ export const ConsultasHome = () => {
             name="name"
             id="name"
             required
-            placeholder="escribe tu nombre"
+            placeholder="Nombre y Apellido"
             className="w-64 h-14 px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             onChange={handleChange}
+            value={consultas.name}
           />
           <input
             type="text"
@@ -54,14 +64,16 @@ export const ConsultasHome = () => {
             placeholder="Teléfono"
             className=" w-64 h-14 px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             onChange={handleChange}
+            value={consultas.movil}
           />
           <input
             type="text"
             name="email"
             id="email"
-            placeholder="Correo electrónico"
+            placeholder="Correo Electrónico"
             className=" w-64 h-14 px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             onChange={handleChange}
+            value={consultas.email}
           />
 
           <textarea
@@ -71,6 +83,7 @@ export const ConsultasHome = () => {
             rows="4"
             className="w-64  px-8 py-2 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             onChange={handleChange}
+            value={consultas.sms}
           ></textarea>
           <button
             type="submit"

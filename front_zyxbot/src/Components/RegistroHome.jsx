@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import img from "../Components/img";
+import { useAuth } from "../Context/authContext";
+import { useNavigate } from "react-router-dom";
 
 export const RegistroHome = () => {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { signup, loginWhithGoogle } = useAuth();
+
+  const navigate = useNavigate();
+
+  const [error, setError] = useState();
+
+  //Se acutualiza el objeto
+  const handleChange = ({ target: { name, value } }) =>
+    setUser({ ...user, [name]: value });
+
+  //Registrando a un Usuario por correo y contraseña
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await signup(user.email, user.password);
+      navigate("/chat");
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  //Autentificando con Google
+  const handleLoginGoogle = async () => {
+    await loginWhithGoogle();
+    navigate("/chat");
+  };
+
   return (
     <section className="bg-gray-950 py-16">
       <div className="text-center">
@@ -21,7 +56,7 @@ export const RegistroHome = () => {
             className="w-full h-auto"
           />
         </div>
-        <form className="w-1/3 ml-8 flex flex-col items-center ">
+        <form className="w-1/3 ml-8 flex flex-col items-center " onSubmit={handleSubmit}>
           <div className="relative flex items-center w-80">
             <svg
               width="40"
@@ -148,7 +183,9 @@ export const RegistroHome = () => {
             </svg>
             <input
               type="email"
+              name="email"
               placeholder="Correo electrónico"
+              onChange={handleChange}
               className="w-full h-14 px-8 py-2 pl-16 bg-gray-800 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             />
           </div>
@@ -156,7 +193,9 @@ export const RegistroHome = () => {
          
           <input
             type="password"
+            name="password"
             placeholder="Contraseña"
+            onChange={handleChange}
             className="w-80 h-14 px-8 py-2 bg-gray-800 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
           />
 
@@ -175,7 +214,7 @@ export const RegistroHome = () => {
                 className="w-8 h-8"
               />
             </button>
-            <button className=" w-20 h-11 px-6 py-2  rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700">
+            <button onClick={handleLoginGoogle} className=" w-20 h-11 px-6 py-2  rounded-lg bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700">
               <img src={img.google} alt="Icono de Google" className="w-8 h-8" />
             </button>
           </div>
