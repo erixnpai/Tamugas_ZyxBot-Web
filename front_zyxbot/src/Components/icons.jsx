@@ -1,9 +1,6 @@
-import { AiOutlineUser } from "react-icons/ai";
-import { AiFillPhone } from "react-icons/ai";
-import { AiFillWechat } from "react-icons/ai";
+import { AiOutlineUser, AiFillPhone, AiFillWechat, AiOutlineMenu } from "react-icons/ai";
 import { MdOutlineEmail } from "react-icons/md";
-import { RiLockPasswordLine } from "react-icons/ri";
-import { RiSendPlaneFill } from "react-icons/ri";
+import { RiLockPasswordLine, RiSendPlaneFill } from "react-icons/ri";
 
 export default{
     AiOutlineUser,
@@ -11,5 +8,6 @@ export default{
     RiLockPasswordLine,
     AiFillPhone, 
     AiFillWechat,
-    RiSendPlaneFill
+    RiSendPlaneFill,
+    AiOutlineMenu
 }
