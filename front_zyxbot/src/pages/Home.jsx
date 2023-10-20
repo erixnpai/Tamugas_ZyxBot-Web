@@ -705,7 +705,7 @@ export const Home= () => {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold">
-                  Víctor José Ortiz Bermudez
+                  Víctor José Ortiz Bermudez  
                 </h2>
                 <h3 className="text-xl font-semibold mb-2">nerros@gmail.com</h3>
               </div>
