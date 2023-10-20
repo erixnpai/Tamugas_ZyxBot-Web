@@ -637,7 +637,7 @@ export const Home= () => {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold">
-                  Angel Erian Hernandez Aleman - Desarrollador
+                  Angel Erian Hernandez Aleman
                 </h2>
                 <h3 className="text-xl font-semibold mb-2">
                   erianhernandez97@gmail.com
@@ -654,7 +654,7 @@ export const Home= () => {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold">
-                  Helen Sofia Vargas Lopez - Comunicadora
+                  Helen Sofia Vargas Lopez
                 </h2>
                 <h3 className="text-xl font-semibold mb-2">
                   helensofiavargaslopez@gmail.com
@@ -671,7 +671,7 @@ export const Home= () => {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold">
-                  Kevin Andres Garcia Moncada - Desarrollador
+                  Kevin Andres Garcia Moncada
                 </h2>
                 <h3 className="text-xl font-semibold mb-2">
                   kevingarcia231@gmail.com
@@ -688,7 +688,7 @@ export const Home= () => {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold">
-                  Keneth Ernest Macis Flores - Diseñador
+                  Keneth Ernest Macis Flores
                 </h2>
                 <h3 className="text-xl font-semibold mb-2">
                   kenny48810354@gmail.com
@@ -705,7 +705,7 @@ export const Home= () => {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold">
-                  Víctor José Ortiz Bermudez - Desarrollador
+                  Víctor José Ortiz Bermudez
                 </h2>
                 <h3 className="text-xl font-semibold mb-2">nerros@gmail.com</h3>
               </div>
