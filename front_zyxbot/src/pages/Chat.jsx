@@ -22,7 +22,7 @@ export const Chat = () => {
       });
 
       const data = await response.json();
-      console.log(mensaje);
+      console.log(data + " "+ mensaje );
       if (
         data.hasOwnProperty("response") &&
         data.response.hasOwnProperty("out-0")

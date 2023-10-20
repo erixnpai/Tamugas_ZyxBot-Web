@@ -9,11 +9,12 @@ use GuzzleHttp\Exception\RequestException;
 class ChatApiController extends Controller
 {
 
-    public function prompt(Request $request){ 
+    public function prompt(Request $request)
+    {
 
         $data =  ['mensaje' => $request->input('mensaje')];
         $response = $this->query($data);
-        
+
         // Manejar la respuesta de tu API según tus necesidades
         if (isset($response['error'])) {
             // Hubo un error en la solicitud, manejarlo apropiadamente
@@ -27,14 +28,12 @@ class ChatApiController extends Controller
     private function query($data)
     {
 
-
-
         $client = new Client();
 
         try {
-            $response = $client->post('https://www.stack-inference.com/run_deployed_flow?flow_id=6518e668bfdd8c32f7d8070c&org=b5ba3cd9-d054-4228-804e-877ee64e7b21', [
+            $response = $client->post(env("API_STACK_URL"), [
                 'headers' => [
-                    'Authorization' => 'Bearer 570cd5d8-f8d6-4fbb-951e-7653763cb340',
+                    'Authorization' => env('API_STACK_BEARER'),
                     'Content-Type' => 'application/json',
                 ],
                 'json' => $data,
@@ -43,7 +42,7 @@ class ChatApiController extends Controller
             return json_decode($response->getBody()->getContents(), true);
         } catch (RequestException $e) {
             // Manejar el error de la solicitud HTTP aquí
-            // Por ejemplo, puedes lanzar una excepción o devolver un mensaje de error
+            
             return ['error' => $e->getMessage()];
         }
     }
