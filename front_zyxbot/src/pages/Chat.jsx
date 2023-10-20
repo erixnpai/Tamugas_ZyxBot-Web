@@ -6,6 +6,9 @@ import icons from "../Components/icons";
 export const Chat = () => {
   const [mensaje, setMensaje] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
 
   const [respuesta, setRespuesta] = useState("");
 
@@ -43,6 +46,12 @@ export const Chat = () => {
     }
   }
 
+
+  // ...
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setChatHistory((chatHistory) => [
@@ -54,7 +63,7 @@ export const Chat = () => {
 
   return (
     <div className="flex h-screen bg-[#4D4D4D]">
-      <aside className="w-1/5 bg-[#040C1C] py-6 flex flex-col justify-between">
+      <aside className={`w-full md:w-1/5 bg-[#040C1C] py-6 flex flex-col justify-between ${isMenuOpen ? 'block' : 'hidden'}`}>
         <div>
           <img
             src={logo}
@@ -82,49 +91,52 @@ export const Chat = () => {
       </aside>
 
       <main className="flex-grow flex flex-col justify-between bg-[#4D4D4D]">
-    <div className="bg-[#222222] h-10 flex items-center"></div>
-    <div className="flex-grow overflow-y-auto mb-4 flex flex-col">
-      {/* Mapear a través de la historia del chat y renderizar cada mensaje y respuesta */}
-      {chatHistory.map((chatItem, index) => (
-        <div
-          key={index}
-          className={`my-2 p-4 ${chatItem.autor === "usuario"
-            ? "bg-[#222222] text-white text-justify px-12 "
-            : "bg-[#4D4D4D] text-white text-justify px-12"
-            }`}
-        >
-          {chatItem.contenido}
-        </div>
-      ))}
-    </div>
-
-    <div className="bg-[#222222] p-4 h-32 flex flex-col items-center justify-center">
-      <div className="flex items-center">
-        <form onSubmit={handleSubmit} className="w-full flex items-center">
-          <div className="relative w-full">
-            <input
-              type="text"
-              name="mensaje"
-              placeholder="Ingrese su pregunta"
-              value={mensaje}
-              onChange={(e) => setMensaje(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg pl-10 text-white bg-gradient-to-r from-[#333333] to-[#4D4D4D]"
-            />
-            <button
-              type="submit"
-              className="absolute right-3 top-1/2 transform -translate-y-1/2  text-white rounded-lg p-2"
+        <div className="bg-[#222222] h-10 flex items-center"> <button onClick={toggleMenu} className="md:hidden">
+          {isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+        </button></div>
+        
+        <div className="flex-grow overflow-y-auto mb-4 flex flex-col">
+          {/* Mapear a través de la historia del chat y renderizar cada mensaje y respuesta */}
+          {chatHistory.map((chatItem, index) => (
+            <div
+              key={index}
+              className={`my-2 p-4 ${chatItem.autor === "usuario"
+                ? "bg-[#222222] text-white text-justify px-12 "
+                : "bg-[#4D4D4D] text-white text-justify px-12"
+                }`}
             >
-              <icons.RiSendPlaneFill />
-            </button>
+              {chatItem.contenido}
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-[#222222] p-4 h-32 flex flex-col items-center justify-center">
+          <div className="flex items-center">
+            <form onSubmit={handleSubmit} className="w-full flex items-center">
+              <div className="relative w-full">
+                <input
+                  type="text"
+                  name="mensaje"
+                  placeholder="Ingrese su pregunta"
+                  value={mensaje}
+                  onChange={(e) => setMensaje(e.target.value)}
+                  className="w-full px-3 py-2 rounded-lg pl-10 text-white bg-gradient-to-r from-[#333333] to-[#4D4D4D]"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2  text-white rounded-lg p-2"
+                >
+                  <icons.RiSendPlaneFill />
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-      <p className="text-white text-center text-xs">
-        Asistente ZyxBot - V.0.1. Todos los derechos reservados para el
-        equipo Tamuga.
-      </p>
-    </div>
-  </main>
+          <p className="text-white text-center text-xs">
+            Asistente ZyxBot - V.0.1. Todos los derechos reservados para el
+            equipo Tamuga.
+          </p>
+        </div>
+      </main>
 
     </div>
   );
