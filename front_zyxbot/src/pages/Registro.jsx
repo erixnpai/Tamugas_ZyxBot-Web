@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import img from "../Components/img";
 import { useAuth } from "../Context/authContext";
 import { useNavigate } from "react-router-dom";
+import icons from "../Components/icons";
 
 export const Registro = () => {
   const [user, setUser] = useState({
@@ -53,32 +54,56 @@ export const Registro = () => {
           className="max-w-[400px] w-full mx-auto bg-slate-950 p-10 px-8 rounded-lg"
         >
           <div className="mb-4 flex flex-col">
+          <div className="relative flex items-center w-80">
+            <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
+              <icons.AiOutlineUser className="text-3xl" />
+            </div>
             <input
               type="text"
               name="nombre"
               placeholder="Nombre"
-              className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
+              className="w-full h-14 px-8 py-2 pl-16 bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             />
+            </div>
+
+            <div className="relative flex items-center w-80">
+            <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
+              <icons.AiOutlineUser className="text-3xl" />
+            </div>
             <input
               type="text"
               name="apellido"
               placeholder="Apellido"
-              className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
+              className="w-full h-14 px-8 py-2 pl-16 bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             />
+            </div>
+
+            <div className="relative flex items-center w-80">
+            <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
+              <icons.MdOutlineEmail className="text-3xl" />
+            </div>
             <input
               type="email"
               name="email"
               placeholder="zyxbot@gmail.com"
-              className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
+              className="w-full h-14 px-8 py-2 pl-16 bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
               onChange={handleChange}
             />
+            </div>
+            
+            <div className="relative flex items-center w-80">
+            <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
+              <icons.RiLockPasswordLine className="text-3xl" />
+            </div>
             <input
               type="password"
               name="password"
               placeholder="Contraseña"
-              className="px-10 py-4 bg-gray-900 text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
+              className="w-full h-14 px-8 py-2 pl-16 bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
               onChange={handleChange}
             />
+            </div>
+
             <div className="mb-4 flex justify-center">
               <button
                 type="submit"
