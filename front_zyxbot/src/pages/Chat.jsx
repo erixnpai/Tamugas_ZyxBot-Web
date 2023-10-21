@@ -70,7 +70,8 @@ export const Chat = () => {
       { autor: "usuario", contenido: mensaje },
     ]);
     fetchData();
-  };
+    setMensaje(""); // Esto limpia el mensaje después de enviarlo
+  };  
 
   return (
     <div className="flex h-screen bg-[#4D4D4D]">
@@ -81,7 +82,7 @@ export const Chat = () => {
           onClick={toggleMenu}
           className="md:hidden"
         >
-          {isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          {isMenuOpen ? <icons.AiOutlineMenu/> : <icons.AiOutlineMenu/>}
         </button>
         <div>
           <img
@@ -96,12 +97,12 @@ export const Chat = () => {
             <button className="w-full md:w-3/4  bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white font-bold w-72 h-12 rounded-lg shadow-lg mb-5">
               Nombre del chat
             </button>
-            <button className="w-full md:w-3/4  border border-gray-800 hover:bg-gray-800 text-white font-bold w-72 h-12 rounded-lg shadow-lg mb-5">
+            <button className="w-full md:w-3/4  border border-gray-800 hover:bg-gray-800 text-white font-bold w-72 h-12 rounded-lg shadow-lg mb-60">
               Nombre del chat
             </button>
             <button
               onClick={handleLogout}
-              className="w-full md:w-3/4  bg-red-500 hover:bg-red-600 text-white  w-72  font-bold h-10 rounded-lg shadow-lg"
+              className="w-full md:w-3/4 bg-red-500 hover:bg-red-600 text-white  w-72  font-bold h-10 rounded-lg shadow-lg"
             >
               <a href="/">Cerrar sesión</a>
             </button>
@@ -115,7 +116,7 @@ export const Chat = () => {
       ></div>
       <main className="w-full md:w-4/5 flex-grow flex flex-col justify-between bg-[#4D4D4D]">
         <button onClick={toggleMenu} className="md:hidden">
-          {isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          {isMenuOpen ? <icons.AiOutlineMenu/> : <icons.AiOutlineMenu/>}
         </button>
         <div className="flex-grow overflow-y-auto mb-4 flex flex-col">
           {/* Mapear a través de la historia del chat y renderizar cada mensaje y respuesta */}

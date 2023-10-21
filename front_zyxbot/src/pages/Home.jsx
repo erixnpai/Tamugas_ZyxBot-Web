@@ -80,7 +80,7 @@ export const Home = () => {
       </section>
 
       <section className="bg-gradient-to-r from-rose-100 via-white to-white">
-        <div className="container mx-auto ml-20">
+        <div className="container mx-auto ml-6 md:ml-20">
           <h2 className="text-5xl font-mont mb-4">ZyxBot Evoluciona Contigo</h2>
           <p className="font-popp mb-4 py-2 lg:mr-12">
             En ZyxBot, estamos comprometidos a simplificar tu búsqueda educativa
@@ -90,7 +90,7 @@ export const Home = () => {
             educativas.
           </p>
         </div>
-        <div className="container mx-auto ml-20">
+        <div className="container mx-auto ml-6 md:ml-20">
           <div className="lg:flex">
             <div className="lg:w-1/2 lg:mb-4 lg:mr-20">
               <p className="font-popp">
@@ -111,7 +111,7 @@ export const Home = () => {
               <img
                 src={img.img_3}
                 alt="zyxboy en dispositivos móviles"
-                className="w-full h-auto lg:w-auto lg:h-auto sm:w-[200px] sm:h-[200px]"
+                className="w-full h-auto lg:w-auto lg:h-auto sm:w-2/3 sm:h-auto sm:float-left"
               />
             </div>
           </div>
@@ -546,9 +546,9 @@ export const Home = () => {
         <ConsultasHome />
       </section>
       {/*NUESTRO EQUIPO DE DESARROLLO*/}
-      <section className="bg-gradient-to-b from-slate-400 via-white to-white ">
-        <div className="container mx-auto flex ml-12  ">
-          <div className="w-1/2">
+      <section className="bg-gradient-to-b from-slate-400 via-white to-white">
+        <div className="container mx-auto flex flex-col md:flex-row md:items-center ml-12">
+          <div className="w-full md:w-1/2 md:pr-4">
             <h2 className="text-5xl font-mont mb-4 mt-10">
               Nuestro Equipo de Desarrollo
             </h2>
@@ -560,91 +560,85 @@ export const Home = () => {
               Conoce al equipo que hace posible ZyxBot y su compromiso con tu
               viaje educativo.
             </p>
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
-                <img
-                  src={img.User_ft}
-                  alt=""
-                  className="w-full h-full object-cover rounded-full"
-                />
+
+            <div className="mb-8">
+              <div className="flex flex-col md:flex-row space-x-4 md:space-x-0 md:space-y-0 md:mb-8">
+                <div className="rounded-full bg-black w-16 h-16 flex-shrink-0">
+                  <img
+                    src={img.User_ft}
+                    alt=""
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="md:mt-2">
+                  <h2 className="text-2xl font-semibold">
+                    Angel Erian Hernandez Aleman
+                  </h2>
+                  <h3 className="text-xl font-semibold mb-2">
+                    erianhernandez97@gmail.com
+                  </h3>
+                </div>
               </div>
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  Angel Erian Hernandez Aleman
-                </h2>
-                <h3 className="text-xl font-semibold mb-2">
-                  erianhernandez97@gmail.com
-                </h3>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
-                <img
-                  src={img.User_ft}
-                  alt=""
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  Helen Sofia Vargas Lopez
-                </h2>
-                <h3 className="text-xl font-semibold mb-2">
-                  helensofiavargaslopez@gmail.com
-                </h3>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
-                <img
-                  src={img.User_ft}
-                  alt=""
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  Kevin Andres Garcia Moncada
-                </h2>
-                <h3 className="text-xl font-semibold mb-2">
-                  kevingarcia231@gmail.com
-                </h3>
+
+              <div className="flex flex-col md:flex-row space-x-4 md:space-x-0 md:space-y-0 md:mb-8">
+                <div className="rounded-full bg-black w-16 h-16 flex-shrink-0">
+                  <img
+                    src={img.User_ft}
+                    alt=""
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="md:mt-2">
+                  <h2 className="text-2xl font-semibold">
+                    Helen Sofia Vargas Lopez
+                  </h2>
+                  <h3 className="text-xl font-semibold mb-2">
+                    helensofiavargaslopez@gmail.com
+                  </h3>
+                </div>
               </div>
             </div>
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
-                <img
-                  src={img.User_ft}
-                  alt=""
-                  className="w-full h-full object-cover rounded-full"
-                />
+
+            <div className="mb-8">
+              <div className="flex flex-col md:flex-row space-x-4 md:space-x-0 md:space-y-0 md:mb-8">
+                <div className="rounded-full bg-black w-16 h-16 flex-shrink-0">
+                  <img
+                    src={img.User_ft}
+                    alt=""
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="md:mt-2">
+                  <h2 className="text-2xl font-semibold">
+                    Kevin Andres Garcia Moncada
+                  </h2>
+                  <h3 className="text-xl font-semibold mb-2">
+                    kevingarcia231@gmail.com
+                  </h3>
+                </div>
               </div>
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  Keneth Ernest Macis Flores
-                </h2>
-                <h3 className="text-xl font-semibold mb-2">
-                  kenny48810354@gmail.com
-                </h3>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4 mb-8">
-              <div className="rounded-full bg-black w-20 h-20 flex-shrink-0">
-                <img
-                  src={img.User_ft}
-                  alt=""
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold">
-                  Víctor José Ortiz Bermudez
-                </h2>
-                <h3 className="text-xl font-semibold mb-2">nerros@gmail.com</h3>
+
+              <div className="flex flex-col md:flex-row space-x-4 md:space-x-0 md:space-y-0">
+                <div className="rounded-full bg-black w-16 h-16 flex-shrink-0">
+                  <img
+                    src={img.User_ft}
+                    alt=""
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="md:mt-2">
+                  <h2 className="text-2xl font-semibold">
+                    Keneth Ernest Macis Flores
+                  </h2>
+                  <h3 className="text-xl font-semibold mb-2">
+                    kenny48810354@gmail.com
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
-          <div className="w-1/2 ">
+
+          <div className="w-full md:w-1/2 hidden md:block">
             <img
               src={img.img_4}
               alt="Imagen de ejemplo"
@@ -693,7 +687,7 @@ export const Home = () => {
               REGÍSTRARSE
             </button>
           </a>
-          <p className="text-xs text-center text-gray-400 mb-3 ">
+          <p className="text-[12px] sm:text-xs text-center text-gray-400 mb-3 ">
             ¡Hola! Nos encanta verte por nuestro sitio web. Antes de que
             empieces a utilizar nuestro sitio web, queremos informarte de que
             nos servimos de cookies y tecnologías similares para mejorar tu
