@@ -17,13 +17,13 @@ export const Home = () => {
       >
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
           <div className="w-full md:w-1/2 md:mr-8 ml-12">
-            <h1 className="text-4xl md:text-9xl font-raj bg-gradient-to-r from-blue-950 via-blue-900 to-purple-600 text-transparent bg-clip-text mb-12">
+            <h1 className="text-6xl sm:text-9xl font-raj bg-gradient-to-r from-blue-950 via-blue-900 to-purple-600 text-transparent bg-clip-text mb-8">
               ZyxBot
             </h1>
             <h2 className="text-2xl md:text-5xl font-bold font-mont mb-4">
               ¡Bienvenidos a ZyxBot!
             </h2>
-            <p className="font-popp mb-8">
+            <p className="text-[13px] font-popp mb-8">
               ¿Buscas respuestas a tus preguntas sobre universidades y programas
               académicos en Nicaragua? ZyxBot está aquí para ayudarte. Nuestra
               inteligencia artificial potenciada te proporcionará información
@@ -80,7 +80,7 @@ export const Home = () => {
       </section>
 
       <section className="bg-gradient-to-r from-rose-100 via-white to-white">
-        <div className="container mx-auto justify-center ml-20">
+        <div className="container mx-auto ml-20">
           <h2 className="text-5xl font-mont mb-4">ZyxBot Evoluciona Contigo</h2>
           <p className="font-popp mb-4 py-2 lg:mr-12">
             En ZyxBot, estamos comprometidos a simplificar tu búsqueda educativa
@@ -90,17 +90,17 @@ export const Home = () => {
             educativas.
           </p>
         </div>
-        <div className="container mx-auto justify-center ml-20">
-          <div className="flex flex-col-reverse lg:flex-row">
-            <div className="lg:w-1/2 mr-20">
-              <p className="font-popp mb-4">
+        <div className="container mx-auto ml-20">
+          <div className="lg:flex">
+            <div className="lg:w-1/2 lg:mb-4 lg:mr-20">
+              <p className="font-popp">
                 Estamos trabajando arduamente en el desarrollo de nuestra
                 aplicación móvil para que puedas acceder a la asistencia
                 educativa de ZyxBot desde cualquier lugar y en cualquier
                 momento. Mantente al tanto, ¡pronto podrás llevar ZyxBot en tu
                 bolsillo!
               </p>
-              <p className="font-popp mb-4">
+              <p className="font-popp">
                 Estamos agregando funciones emocionantes para hacer que tu
                 experiencia sea aún más enriquecedora. Pronto podrás disfrutar
                 de características como búsquedas avanzadas, recomendaciones
@@ -111,7 +111,7 @@ export const Home = () => {
               <img
                 src={img.img_3}
                 alt="zyxboy en dispositivos móviles"
-                className="w-full h-auto"
+                className="w-full h-auto lg:w-auto lg:h-auto sm:w-[200px] sm:h-[200px]"
               />
             </div>
           </div>
@@ -121,7 +121,7 @@ export const Home = () => {
       {/* Ventajas */}
       <section
         id="ventajas"
-        className="bg-gradient-to-r from-rose-100 via-white to-white py-16"
+        className="bg-gradient-to-r from-rose-100 via-white to-white py-16 hidden lg:block"
       >
         <div className="container mx-auto justify-center ml-20 ">
           <h2 className="text-5xl font-mont mb-4 ">Ventajas de ZyxBot</h2>
@@ -437,9 +437,9 @@ export const Home = () => {
             mundo de posibilidades educativas.
           </p>
         </div>
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-20 justify-center">
-            <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3">
+            <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3 md:w-1/4 lg:w-1/3">
               <div className="flex items-center">
                 <img
                   src={img.Ana_ft}
@@ -463,11 +463,11 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3">
+            <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3 md:w-1/4 lg:w-1/3">
               <div className="flex items-center">
                 <img
                   src={img.Carlos_ft}
-                  alt="Imagen de perfil de Ana"
+                  alt="Imagen de perfil de Carlos"
                   className="rounded-full w-20 h-20"
                 />
                 <div className="ml-4">
@@ -491,11 +491,11 @@ export const Home = () => {
           <div className="mt-8"></div>
 
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-20 justify-center">
-            <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3">
+            <div className="bg-white rounded-s-3xl rounded-e-3xl px-4 p-3 border border-black w-full sm:w-1/3 md:w-1/4 lg:w-1/3">
               <div className="flex items-center">
                 <img
                   src={img.Luis_ft}
-                  alt="Imagen de perfil de Ana"
+                  alt="Imagen de perfil de Luis"
                   className="rounded-full w-20 h-20"
                 />
                 <div className="ml-4">
@@ -689,9 +689,9 @@ export const Home = () => {
             REGÍSTRESE EN ZYXBOT AHORA
           </h2>
           <a href="/registro">
-          <button className="w-30 h-10 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg mb-4">
-            REGÍSTRARSE
-          </button>
+            <button className="w-30 h-10 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg mb-4">
+              REGÍSTRARSE
+            </button>
           </a>
           <p className="text-xs text-center text-gray-400 mb-3 ">
             ¡Hola! Nos encanta verte por nuestro sitio web. Antes de que

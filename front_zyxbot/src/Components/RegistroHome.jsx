@@ -41,7 +41,7 @@ export const RegistroHome = () => {
   return (
     <section className="bg-gray-950 py-16">
       <div className="text-center">
-        <h2 className="text-5xl text-white font-mont mb-4">
+        <h2 className="text-3xl sm:text-5xl text-white font-mont mb-4">
           Regístrate para Empezar Tu Viaje Educativo
         </h2>
         <p className="text-white font-popp mb-4">
@@ -49,8 +49,8 @@ export const RegistroHome = () => {
           mundo de posibilidades educativas.
         </p>
       </div>
-      <div className="container mx-auto flex items-center justify-center">
-        <div className="w-1/2">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center">
+        <div className="w-4/5 sm:w-1/2 mx-auto mb-8 sm:mb-0">
           <img
             src={img.registro_log}
             alt="Imagen de ZyxBot registro"
@@ -58,7 +58,7 @@ export const RegistroHome = () => {
           />
         </div>
         <form
-          className="w-1/3 ml-8 flex flex-col items-center "
+          className="w-full sm:w-1/3 ml-8 flex flex-col items-center"
           onSubmit={handleSubmit}
         >
           <div className="relative flex items-center w-80">
@@ -71,7 +71,7 @@ export const RegistroHome = () => {
               className="w-full h-14 px-8 py-2 pl-16 bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
             />
           </div>
-          
+
           <div className="relative flex items-center w-80">
             <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
               <icons.AiOutlineUser className="text-3xl" />
@@ -84,7 +84,7 @@ export const RegistroHome = () => {
           </div>
 
           <div className="relative flex items-center w-80">
-          <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
+            <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
               <icons.MdOutlineEmail className="text-3xl" />
             </div>
             <input
@@ -97,16 +97,16 @@ export const RegistroHome = () => {
           </div>
 
           <div className="relative flex items-center w-80">
-          <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
+            <div className="absolute left-0 top-0 h-14 w-14 text-gray-400 flex items-center justify-center">
               <icons.RiLockPasswordLine className="text-3xl" />
             </div>
-          <input
-            type="password"
-            name="password"
-            placeholder="Contraseña"
-            onChange={handleChange}
-            className="w-full h-14 px-8 py-2 pl-16 bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
-          />
+            <input
+              type="password"
+              name="password"
+              placeholder="Contraseña"
+              onChange={handleChange}
+              className="w-full h-14 px-8 py-2 pl-16 bg-gradient-to-r from-[#333333] to-[#4D4D4D] text-white rounded-md focus:outline-none focus:bg-gray-700 mb-4"
+            />
           </div>
 
           <button className="w-30 h-10 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg hover:bg-blue-200 transition duration-300 mb-4">
