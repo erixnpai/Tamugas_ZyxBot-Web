@@ -11,9 +11,9 @@ export const Login = () => {
     password: "",
   });
 
-  const { login } = useAuth();
 
-  const { signup, loginWhithGoogle } = useAuth();
+
+  const { login, loginWhithGoogle } = useAuth();
 
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ export const Login = () => {
       e.preventDefault();
       setError("");
       try {
-        await signup(user.email, user.password);
+        await login(user.email, user.password);
         navigate("/chat");
       } catch (error) {
         setError(error.message);
@@ -68,12 +68,12 @@ export const Login = () => {
               onChange={handleChange}
             />
             </div>
-            </div>
-          </div>
           <div className="mb-4 flex justify-center text-xl">
-            <button onClick={handleSubmit} className=" w-60 h-12 text-center font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg ">
+            <button  className=" w-60 h-12 text-center font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg ">
               <a>INICIAR</a>
             </button>
+          </div>
+            </div>
           </div>
           <h3 className="text-center text-white font-semibold mb-4">
             ¿Ya tienes una Cuenta? Iniciemos sesión

@@ -58,11 +58,43 @@ export function AuthProvider({ children }) {
 
   // Registro de usuario
   const signup = (email, password) =>
-    createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password).then(cred =>{
+      Swal.fire({
+        icon:"success",
+        title: "Éxito",
+        text: "Registro con exito"
+      });
+    }).catch(error=>{
+      const errorCode = error.code;
+      if(errorCode == 'auth/email-alredy-in-use')
+        alert("Correo ya en uso");
+      else if(errorCode == 'auth/invalid-email')
+        alert('El correo no es válido')
+      else if (errorCode == 'auth/weak-password')
+      Swal.fire({
+        icon:"error",
+        title: "Error",
+        text: "La contraseña debe de ser almenos de 6 carecter"
+      });
+    });
 
   // Inicio de sesión
   const login = (email, password) =>
-    signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password).then(cred =>{
+      Swal.fire({
+        icon:"success",
+        title: "Éxito",
+        text: "Usuario Logiado"
+      });
+    }).catch(error =>{
+      const errorCode = error.code;
+      if(errorCode == 'auth/wrong-password')
+      Swal.fire({
+        icon:"error",
+        title: "Error",
+        text: "Contraseña no válida"
+      });
+    });
 
   // Cierre de sesión
   const logout = () => signOut(auth);
