@@ -12,8 +12,8 @@ class ChatApiController extends Controller
     public function prompt(Request $request)
     {
 
-        $data =  ['mensaje' => $request->input('mensaje')];
-        $response = $this->query($data);
+        $data =  ['in-0' => $request->json('mensaje')];
+    $response = $this->query($data);
 
         // Manejar la respuesta de tu API según tus necesidades
         if (isset($response['error'])) {
