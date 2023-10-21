@@ -1,32 +1,29 @@
 import img from "../Components/img";
-import  {ConsultasHome} from '../Components/ConsultasHome'
+import { ConsultasHome } from "../Components/ConsultasHome";
 import { RegistroHome } from "../Components/RegistroHome";
-import { Navbar } from '../Components/Navbar';
+import { Navbar } from "../Components/Navbar";
 
-export const Home= () => {
-
-  
-
+export const Home = () => {
   return (
     <>
-     <header>
-        <Navbar/>
-     </header>
+      <header>
+        <Navbar />
+      </header>
 
       {/* Primer sección Bienvenida*/}
       <section
         id="Bienvenida"
         className="bg-gradient-to-r from-rose-100 via-white to-white py-16"
       >
-        <div className="container mx-auto flex items-center justify-center">
-          <div className="w-1/2 mr-8 ml-12">
-            <h1 className="text-9xl font-raj bg-gradient-to-r from-blue-950 via-blue-900 to-purple-600 text-transparent bg-clip-text mb-12 ">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
+          <div className="w-full md:w-1/2 md:mr-8 ml-12">
+            <h1 className="text-4xl md:text-9xl font-raj bg-gradient-to-r from-blue-950 via-blue-900 to-purple-600 text-transparent bg-clip-text mb-12">
               ZyxBot
             </h1>
-            <h2 className="text-5xl font-bold font-mont mb-4">
+            <h2 className="text-2xl md:text-5xl font-bold font-mont mb-4">
               ¡Bienvenidos a ZyxBot!
             </h2>
-            <p className="font-popp mb-8 ">
+            <p className="font-popp mb-8">
               ¿Buscas respuestas a tus preguntas sobre universidades y programas
               académicos en Nicaragua? ZyxBot está aquí para ayudarte. Nuestra
               inteligencia artificial potenciada te proporcionará información
@@ -37,12 +34,12 @@ export const Home= () => {
             </p>
             <a
               href="/chat"
-              className="bg-gradient-to-r from-[#0C0076] via-blue-900 to-[#0061BF] text-white text-xl px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
+              className="bg-gradient-to-r from-[#0C0076] via-blue-900 to-[#0061BF] text-white text-sm sm:text-xl px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out"
             >
               IR AL CHAT
             </a>
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2 mt-8 md:mt-0">
             <img
               src={img.img_1}
               alt="Imagen de ejemplo"
@@ -54,19 +51,9 @@ export const Home= () => {
 
       {/* Segunda sección Chat En Vivo*/}
       <section className="bg-gradient-to-r from-rose-100 via-white to-white py-16">
-        <div className="container flex items-center justify-center">
-          <div className="w-9/12">
-            <div className="relative">
-              <img
-                src={img.img_2}
-                alt="ZyxBot en movil y ordenador"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-
-          <div className="w-1/2 ml-12 text-right">
-            <h2 className="text-5xl font-bold font-mont mb-4">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
+          <div className="w-full md:w-1/2 md:ml-12 text-center md:text-right">
+            <h2 className="text-2xl md:text-5xl font-bold font-mont mb-4">
               Chat en vivo: la forma más rápida y eficiente de ayudarte
             </h2>
             <p className="font-popp mb-8">
@@ -79,13 +66,23 @@ export const Home= () => {
               viaje educativo!
             </p>
           </div>
+
+          <div className="w-full md:w-9/12 md:order-last">
+            <div className="relative">
+              <img
+                src={img.img_2}
+                alt="ZyxBot en movil y ordenador"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="bg-gradient-to-r from-rose-100 via-white to-white">
         <div className="container mx-auto justify-center ml-20">
           <h2 className="text-5xl font-mont mb-4">ZyxBot Evoluciona Contigo</h2>
-          <p className="font-popp mb-4 py-2 mr-12">
+          <p className="font-popp mb-4 py-2 lg:mr-12">
             En ZyxBot, estamos comprometidos a simplificar tu búsqueda educativa
             y a ser tu compañero confiable en cada paso de tu viaje académico.
             Descubre cómo nuestra plataforma integral puede marcar la diferencia
@@ -94,7 +91,7 @@ export const Home= () => {
           </p>
         </div>
         <div className="container mx-auto justify-center ml-20">
-          <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col-reverse lg:flex-row">
             <div className="lg:w-1/2 mr-20">
               <p className="font-popp mb-4">
                 Estamos trabajando arduamente en el desarrollo de nuestra
@@ -110,7 +107,7 @@ export const Home= () => {
                 personalizadas y más.
               </p>
             </div>
-            <div className="w-[400px]">
+            <div className="w-full lg:w-[350px] lg:order-last">
               <img
                 src={img.img_3}
                 alt="zyxboy en dispositivos móviles"
@@ -425,9 +422,9 @@ export const Home= () => {
       </section>
 
       {/*Registro home */}
-     <section>
-       <RegistroHome/>
-     </section>
+      <section>
+        <RegistroHome />
+      </section>
 
       {/*Seccion de testimonio*/}
       <section id="opiniones" className="bg-rose-100 py-16 ">
@@ -546,7 +543,7 @@ export const Home= () => {
 
       {/* CONSULTAS Y COMENTARIOS */}
       <section>
-        <ConsultasHome/>
+        <ConsultasHome />
       </section>
       {/*NUESTRO EQUIPO DE DESARROLLO*/}
       <section className="bg-gradient-to-b from-slate-400 via-white to-white ">
@@ -641,7 +638,7 @@ export const Home= () => {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold">
-                  Víctor José Ortiz Bermudez  
+                  Víctor José Ortiz Bermudez
                 </h2>
                 <h3 className="text-xl font-semibold mb-2">nerros@gmail.com</h3>
               </div>
@@ -665,23 +662,37 @@ export const Home= () => {
             SÍGANOS EN LAS REDES SOCIALES
           </h2>
           <div className="flex space-x-4 mb-4">
-            <img src={img.twitter} alt="Icono de Twitter" className="w-10 h-10" />
+            <img
+              src={img.twitter}
+              alt="Icono de Twitter"
+              className="w-10 h-10"
+            />
             <img
               src={img.instagram}
               alt="Icono de instagram"
               className="w-10 h-10"
             />
-            <img src={img.facebook} alt="Icono de facebook" className="w-10 h-10" />
+            <img
+              src={img.facebook}
+              alt="Icono de facebook"
+              className="w-10 h-10"
+            />
             <img src={img.tiktok} alt="Icono de tiktok" className="w-10 h-10" />
-            <img src={img.whatsapp} alt="Icono de whatsapp" className="w-10 h-10" />
+            <img
+              src={img.whatsapp}
+              alt="Icono de whatsapp"
+              className="w-10 h-10"
+            />
             <img src={img.yotube} alt="Icono de yotube" className="w-10 h-10" />
           </div>
           <h2 className="text-3xl text-[#040C1C] font-mont mb-4">
             REGÍSTRESE EN ZYXBOT AHORA
           </h2>
+          <a href="/registro">
           <button className="w-30 h-10 font-bold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-700 text-white px-8 py-2 rounded-lg mb-4">
             REGÍSTRARSE
           </button>
+          </a>
           <p className="text-xs text-center text-gray-400 mb-3 ">
             ¡Hola! Nos encanta verte por nuestro sitio web. Antes de que
             empieces a utilizar nuestro sitio web, queremos informarte de que
@@ -708,4 +719,4 @@ export const Home= () => {
       </footer>
     </>
   );
-}
+};
